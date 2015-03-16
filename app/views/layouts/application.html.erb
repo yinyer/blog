@@ -8,6 +8,27 @@
 </head>
 <body>
 
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag "take-picture.png" %>
+			<% end %>
+		</div>
+		<ul>
+			<li class="category">Website</li>
+			<li><%= link_to "Blog" , root_path %></li>
+			<li><a href="#">About</a></li>
+		</ul>
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">Google +</a></li>
+			<li><a href="#">Facebook</a></li>
+			<li><a href="mailto:gilda@insignia4u.com">Email</a></li>
+		</ul>
+	</div>
+
 <%= yield %>
 
 </body>
