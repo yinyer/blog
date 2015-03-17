@@ -86,6 +86,13 @@ a {
 	}
 }
 
+.btn-right{
+	float: right;
+	display: inline-block;
+	padding: .5em 1.5em;
+	font-size: 1.1em;
+}
+
 .clearfix:after {
    content: ".";
    visibility: hidden;
@@ -241,7 +248,6 @@ a {
 		min-height: 180px;
 	}
 	input[type="submit"] {
-		content: "Guardar";
 		outline: none;
 		background: transparent;
 		border: 1px solid #d6dce0;
@@ -254,4 +260,9 @@ a {
 			color: #33acb7;
 		}
 	}
+}
+
+.errors{
+	color: #D27979;
+	margin: .5em 0 0 0;
 }
