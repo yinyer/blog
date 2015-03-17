@@ -1,0 +1,33 @@
+<%= form_for @post do |f| %>
+    
+  <% if @post.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(@post.errors.count, "Error") %>, no se pudo guardar este post</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p><%= f.label :asset, "Selecciona una imágen" %><br><br>
+    <%= f.file_field :asset %> 
+  </p>
+  
+  <p>
+    <%= f.label :title, "Título" %><br>
+    <%= f.text_field :title %> 
+  </p>
+
+  <p>
+    <%= f.label :body, "Comentario" %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <%= f.submit %>
+  <button class="button btn-right">
+    <%= link_to "Volver al Inicio", root_path %>
+  </butoon>
+
+<% end %>
