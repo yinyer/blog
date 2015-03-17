@@ -1,11 +1,20 @@
-<h1 class="title">
-	<%= @post.title %>
-</h1>
+<div id="post_content">
 
-<p class="date">
-	Posteado hace <%= time_ago_in_words(@post.created_at) %> 
-</p>
+  <h1 class="title">
+  	<%= @post.title %>
+  </h1>
 
-<p class="body">
-	<%= @post.body %>
-</p>
+  <p class="date_and_author">
+  	Posteado hace <%= time_ago_in_words(@post.created_at) %> 
+  </p>
+
+  <p class="body">
+  	<%= @post.body %>
+  </p>
+
+  <div>
+     <button class="button"><%= link_to "Volver al Inicio", root_path %>
+     </butoon>
+  </div>
+
+</div>
