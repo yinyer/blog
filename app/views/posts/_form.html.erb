@@ -1,4 +1,4 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { multipart: true } do |f| %>
     
   <% if @post.errors.any? %>
     <div class="errors">
@@ -13,8 +13,9 @@
   
   <p>Seleccionar Imagen</p>
   <div class="input-file">
-    <p><%= f.label :asset, "Elegir Imagen" %><br><br>
-      <%= f.file_field :asset, class: "btn-file" %> 
+    <p>
+      <%= f.label :image, "Elegir Imagen" %><br><br>
+      <%= f.file_field :image, class: "btn-file" %> 
     </p>
   </div>  
   

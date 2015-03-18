@@ -3,6 +3,12 @@
   <h1 class="title">
   	<%= @post.title %>
   </h1>
+  
+  <!--La imágen no toma los tamaños definidos en el modelo-->
+  <p>
+    <%= image_tag @post.image.url %>   
+  </p>
+  
 
   <p class="date_and_author">
   	Posteado hace <%= time_ago_in_words(@post.created_at) %> 
