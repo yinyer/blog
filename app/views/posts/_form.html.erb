@@ -10,10 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <p><%= f.label :asset, "Selecciona una imágen" %><br><br>
-    <%= f.file_field :asset %> 
-  </p>
+  
+  <p>Seleccionar Imagen</p>
+  <div class="input-file">
+    <p><%= f.label :asset, "Elegir Imagen" %><br><br>
+      <%= f.file_field :asset, class: "btn-file" %> 
+    </p>
+  </div>  
   
   <p>
     <%= f.label :title, "Título" %><br>
@@ -26,8 +29,5 @@
   </p>
 
   <%= f.submit %>
-  <button class="button btn-right">
-    <%= link_to "Volver al Inicio", root_path %>
-  </butoon>
-
+ 
 <% end %>
