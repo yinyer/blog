@@ -2,7 +2,11 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-		@posts = Post.all.order('created_at DESC')
+		if current_user
+	    	@posts = Post.where(user_id: current_user) #poner luego del current_user.following_user
+	    else	
+			@posts = Post.all.order('created_at DESC')
+		end
 	end
 
 	def new
