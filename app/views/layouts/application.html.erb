@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<%= render 'layouts/alerts' %>
 
 	<div id="sidebar">
 		<div id="logo">
@@ -33,29 +35,43 @@
 	</div>
 
 	<div id="main_content">
+		
 		<div id="header">
+			
 			<% if current_page? (root_path)%>
 				<p>Todos los Posts</p>
 			<% elsif current_page?(about_path)%>
 				<p>Acerca de</p>
 			<% else %>
-				<%= link_to "Volver a Todos los Post", root_path %>
+				<% if user_signed_in? %>
+					<%= link_to "Volver a Todos los Post", root_path %>
+				<% else %>
+					<%= link_to "Volver a Todos los Post", root_path %>
+				<% end %>
 			<% end %>
+
 			
 			<% if user_signed_in? %>
 				<div class="buttons">
 					<button class="button"><%= link_to "Nuevo Post", new_post_path %></button>
-					<button class="button">Log Out</button>
+					<button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
+				</div>
+			<% else %>	
+				<div class="buttons">
+					<button class="button"><%= link_to "Log In", new_user_session_path %></button>
+					<button class="button"><%= link_to "Sign Up", new_user_registration_path %></button>
 				</div>
 			<% end %>
+		
 		</div>
 		
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 		<% end %>
 
-
-		<%= yield %>
+		<div id="page_wrapper">
+			<%= yield %>
+		</div>
 
 	</div>
 

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :followings, source: :following_user
 
+
   def following? (following_user)
   	if followings.where(following_user_id: following_user_id).first
   		true
@@ -17,4 +18,10 @@ class User < ActiveRecord::Base
   	end
   end
   
+  def mostrar_email
+    puts "El nombre es: #{email}"
+  end
+  
+
+
 end

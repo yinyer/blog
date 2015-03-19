@@ -3,9 +3,9 @@ class PostsController < ApplicationController
 
 	def index
 		if current_user
-	    	@posts = Post.where(user_id: current_user) #poner luego del current_user.following_user
-	    else	
-			@posts = Post.all.order('created_at DESC')
+	    @posts = Post.where(user_id: current_user)
+    else	
+			@posts = Post.all
 		end
 	end
 
@@ -14,12 +14,12 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.build(post_params)
 		
 		if @post.save
 			redirect_to root_path
 		else
-			render 'new'
+			render :new
 		end
 	end
 
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
 		if @post.update(post_params)
 			redirect_to @post
 		else
-			render 'edit'
+			render :edit
 		end
 	end	
 

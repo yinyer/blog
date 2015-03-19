@@ -1,0 +1,12 @@
+<div id="page_wrapper">
+  <h2>Posts de <%= @user.email %></h2>
+
+  <div id="following">
+    <%= render 'following' %>
+  </div>
+
+  <% @posts.most_recent each do |post| %>
+    <%= render "posts/post", post: post  %>
+  <% end %>
+  
+</div>
