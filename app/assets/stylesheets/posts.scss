@@ -108,8 +108,8 @@ a {
 		border-bottom: 1px solid #F2EBDD;
 		background: #FDF6E9;
 		color: #9eafba;
-		width:100%;
-		position:fixed;
+		// width:100%;
+		// position:fixed;
 		p {
 			display: inline;
 		}
@@ -118,10 +118,10 @@ a {
 			text-decoration: none;
 		}
 		.buttons {
-			display:inline-block;
+			//display:inline-block;
 			float:right;
 			margin-top: -6px;
-			position:absolute;
+			//position:absolute;
 			.button {
 				font-size: .8em;
 				margin-left: .5em;
