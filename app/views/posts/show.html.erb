@@ -12,7 +12,7 @@
   <p class="date_and_author">
   	Posteado hace <%= time_ago_in_words(@post.created_at) %>
     <% if user_signed_in? %>
-      | <strong><%= link_to 'Editarse', edit_post_path(@post)%> </strong> | <strong><%= link_to 'Borrar', post_path(@post), method: :delete, data: {confirm: '¿Está seguro de querer borrar el Post?'}%> </strong>
+      | <strong><%= link_to 'Editar', edit_post_path(@post)%> </strong> | <strong><%= link_to 'Borrar', post_path(@post), method: :delete, data: {confirm: '¿Está seguro de querer borrar el Post?'}%> </strong>
     <% end %>
   </p>
   </p>
