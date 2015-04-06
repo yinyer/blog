@@ -26,6 +26,11 @@ gem 'devise'
 gem 'paperclip'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+#Amazon
+gem 'aws-sdk'
+#Figaro
+gem "figaro"
+
 group :production do
   gem 'rails_12factor'
   gem 'pg'
