@@ -79,7 +79,7 @@ Rails.application.configure do
 
   # Config / entornos / production.rb
   config.paperclip_defaults = {
-    : Almacenamiento => : s3 ,
+    : Almacenamiento => :s3 ,
      : s3_credentials => {
        :bucket => ENV [ ' S3_BUCKET_NAME ' ],
        :access_key_id => ENV [ ' AWS_ACCESS_KEY_ID ' ],
